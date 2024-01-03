@@ -7,9 +7,7 @@ const MovieDetail = () => {
   const { totalMovies } =
     useSelector((state) => state.movie);
 
-  useEffect(() => {
-    dispatch(movieAction.getMovies());
-  }, []);
+  // 주석 테스트
   return (
     <div className="movieDetail-background">
       <div className="movieDetail-banner">
