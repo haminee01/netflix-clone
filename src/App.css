@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-black {
+  background-color: black !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background {
+  background-color: black;
+  color: white;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.banner {
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+.banner::before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  content: "";
+  background: linear-gradient(to right, black, transparent);
+}
+.banner-info {
+  width: 40%;
+  margin-left: 30px;
+  z-index: 1;
+  margin-top: 200px;
+}
+.banner-info h1 {
+  margin-bottom: 20px;
+  font-family: fantasy;
+}
+
+.spinner-center {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.background h5 {
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.movie-card {
+  width: 300px;
+  height: 200px;
+  margin-left: 35px;
+}
+
+.overlay h2 {
+  margin: 10px;
+  font-family: fantasy;
+  padding-top: 10px;
+}
+.overlay div {
+  margin: 10px;
+}
+.overlay {
+  opacity: 0;
+}
+.movie-card:hover .overlay {
+  opacity: 1;
+  background: rgba(43, 41, 41, 0.9);
+  width: 100%;
+  height: 100%;
+}
+
+.id-badge {
+  margin-right: 5px;
+}
+
+.movieDetail-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+.movieDetail-banner {
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-black-and-red-simple-black-friday-e-commerce-banner-image_180666.jpg");
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  border: 0.1px solid black;
+}
+.movieDetail-banner h1 {
+  font-size: 60px;
+  margin-top: 130px;
+  margin-bottom: 30px;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+}
+
+.breadcrumb-menu {
+  list-style: none;
+}
+.breadcrumb-menu li {
+  display: inline-block;
+  padding: 24px 42px;
+  background: #fff;
+  line-height: 1;
+  position: relative;
+}
+.breadcrumb-menu li::after {
+  content: "";
+  width: 2px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #c4c5d5;
+}
+.breadcrumb-menu li a {
+  text-decoration: none;
+  color: #525470;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.breadcrumb-menu li span {
+  color: #abadc5;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  letter-spacing: 2px;
 }
