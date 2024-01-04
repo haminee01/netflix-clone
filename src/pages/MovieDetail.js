@@ -10,6 +10,7 @@ const MovieDetail = () => {
   const { id } = useParams();
   console.log("id", id);
 
+<<<<<<< HEAD
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
@@ -22,6 +23,9 @@ const MovieDetail = () => {
       </div>
     );
   }
+=======
+  // 주석 테스트
+>>>>>>> 1423367f6b49053c098a9cf622089ffc4eee3fc0
   return (
     <div className="movieDetail-background">
       <div className="movieDetail-banner">
