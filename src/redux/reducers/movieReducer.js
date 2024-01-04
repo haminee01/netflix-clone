@@ -2,6 +2,7 @@ let initialState = {
   popularMovies: {},
   topRatedMovies: {},
   upcomingMovies: {},
+  totalMovies: [],
   loading: true,
   genreList: [],
 };
@@ -13,11 +14,23 @@ function movieReducer(state = initialState, action) {
       return { ...state, loading: true };
 
     case "GET_MOVIES_SUCCESS":
+      const { popularMovies, topRatedMovies, upcomingMovies } = payload;
+
+      const mergedMovies = [
+        ...new Map([
+          ...state.totalMovies.map((movie) => [movie.id, movie]),
+          ...popularMovies.results.map((movie) => [movie.id, movie]),
+          ...topRatedMovies.results.map((movie) => [movie.id, movie]),
+          ...upcomingMovies.results.map((movie) => [movie.id, movie]),
+        ]).values(),
+      ];
+
       return {
         ...state,
-        popularMovies: payload.popularMovies,
-        topRatedMovies: payload.topRatedMovies,
-        upcomingMovies: payload.upcomingMovies,
+        popularMovies,
+        topRatedMovies,
+        upcomingMovies,
+        totalMovies: mergedMovies,
         genreList: payload.genreList,
         loading: false,
       };

@@ -116,7 +116,7 @@ body {
   line-height: 1;
   position: relative;
 }
-.breadcrumb-menu li::after {
+.breadcrumb-menu li a::after {
   content: "";
   width: 2px;
   height: 17px;

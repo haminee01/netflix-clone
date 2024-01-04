@@ -14,10 +14,9 @@ const Navigation = () => {
     <Navbar bg="dark" className="navbar-black" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
-          <img
-            width={100}
-            src="https://noona-netflix.netlify.app/logo.png"
-          />
+          <Link to="/">
+            <img width={100} src="https://noona-netflix.netlify.app/logo.png" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

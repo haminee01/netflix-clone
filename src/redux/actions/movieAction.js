@@ -22,18 +22,13 @@ function getMovies() {
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en`
       );
 
-      let [
-        popularMovies,
-        topRatedMovies,
-        upcomingMovies,
-        genreList,
-      ] = await Promise.all([
-        popularMovieApi,
-        topRatedApi,
-        upComingApi,
-        genreApi,
-      ]);
-      console.log("genreList?", genreList);
+      let [popularMovies, topRatedMovies, upcomingMovies, genreList] =
+        await Promise.all([
+          popularMovieApi,
+          topRatedApi,
+          upComingApi,
+          genreApi,
+        ]);
 
       dispatch({
         type: "GET_MOVIES_SUCCESS",
@@ -42,6 +37,11 @@ function getMovies() {
           topRatedMovies: topRatedMovies.data,
           upcomingMovies: upcomingMovies.data,
           genreList: genreList.data.genres,
+          totalMovies: [
+            ...popularMovies.data.results,
+            ...topRatedMovies.data.results,
+            ...upcomingMovies.data.results,
+          ],
         },
       });
     } catch (error) {
