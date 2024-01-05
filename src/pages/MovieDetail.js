@@ -3,6 +3,7 @@ import { movieAction } from "../redux/actions/movieAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
+import MovieDetailsInfo from "../components/MovieDetailsInfo";
 
 const MovieDetail = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,6 @@ const MovieDetail = () => {
   const { id } = useParams();
   console.log("id", id);
 
-<<<<<<< HEAD
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
@@ -23,9 +23,7 @@ const MovieDetail = () => {
       </div>
     );
   }
-=======
-  // 주석 테스트
->>>>>>> 1423367f6b49053c098a9cf622089ffc4eee3fc0
+
   return (
     <div className="movieDetail-background">
       <div className="movieDetail-banner">
@@ -48,6 +46,7 @@ const MovieDetail = () => {
           </li>
         </ul>
       </div>
+      <MovieDetailsInfo movies={totalMovies}/>
     </div>
   );
 };

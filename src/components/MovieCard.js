@@ -32,8 +32,15 @@ const MovieCard = ({ item }) => {
           ))}
         </div>
         <div>
-          <span>{item.vote_average}</span>
-          <span>{item.adult ? "19  " : "  under 18"}</span>
+          <span>
+            <img
+              className="span-margin"
+              src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/171_Imdb_logo_logos-512.png"
+              style={{ width: "20px", height: "20px" }}
+            />
+            {item.vote_average}
+          </span>
+          <span className="eighteen">{item.adult ? "19  " : "  under 18"}</span>
         </div>
       </div>
     </div>

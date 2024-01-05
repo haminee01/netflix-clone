@@ -143,3 +143,55 @@ body {
   transition: all 0.3s ease 0s;
   letter-spacing: 2px;
 }
+
+.movie-details {
+  margin-top: 100px;
+}
+.movie-details-image {
+  width: 500px;
+  margin-left: 100px;
+}
+.movie-details-box {
+  background-color: #dc143c;
+  padding: 5px 20px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 15px;
+  display: inline-block;
+}
+.movie-details-title {
+  font-size: 65px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+div span {
+  margin-right: 30px;
+}
+.span-margin {
+  margin-right: 5px;
+}
+.eighteen {
+  color: #dc143c;
+  font-family: fantasy !important;
+}
+.movie-details-infos {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  margin-left: 7px;
+  font-size: 25px !important;
+  font-family: sans-serif;
+  margin-right: 30px;
+}
+.movie-details-overview {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #fff;
+}
+.movie-details-release-date{
+  margin-top: 30px;
+}
