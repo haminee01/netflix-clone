@@ -5,6 +5,7 @@ let initialState = {
   totalMovies: [],
   loading: true,
   genreList: [],
+  movieDetails: {},
 };
 
 function movieReducer(state = initialState, action) {
@@ -33,6 +34,7 @@ function movieReducer(state = initialState, action) {
         totalMovies: mergedMovies,
         genreList: payload.genreList,
         loading: false,
+        movieDetails: payload.movieDetails,
       };
     case "GET_MOVIES_FAILURE":
       return { ...state, loading: false };
