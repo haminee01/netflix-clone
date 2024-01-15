@@ -21,8 +21,10 @@ const Home = () => {
       </div>
     );
   }
+  console.log(popularMovies);
   return (
     <div className="background">
+      {/* error : popularsMovies가 받아오지 않음. 404 err */}
       <Banner movie={popularMovies.results[0]} />
 
       <h5>Popular Movie</h5>

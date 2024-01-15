@@ -2,7 +2,9 @@ import api from "../api";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
+// const testId = id || 2;
 function getMovies(id) {
+  console.log(id);
   return async (dispatch) => {
     try {
       dispatch({ type: "GET_MOVIES_REQUEST" });
@@ -22,6 +24,7 @@ function getMovies(id) {
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en`
       );
 
+      // error
       const movieDetailsApi = api.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
       );
