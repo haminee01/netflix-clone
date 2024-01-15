@@ -60,6 +60,7 @@ const MovieDetail = () => {
           </li>
         </ul>
       </div>
+      {/* test */}
       <div className="p-100">
         <Container>
           <Row>
