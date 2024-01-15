@@ -5,12 +5,26 @@ import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import MovieDetailsInfo from "../components/MovieDetailsInfo";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Container, Row } from "react-bootstrap";
+import ReviewList from "../components/ReviewList";
+import RelatedMovies from "../components/RelatedMovies";
 
 const MovieDetail = () => {
   const dispatch = useDispatch();
-  const { totalMovies, loading } = useSelector((state) => state.movie);
+  const { totalMovies, loading, movieReviews, similarMovies } = useSelector(
+    (state) => state.movie
+  );
   const { id } = useParams();
-  console.log("id", id);
+  console.log("similarMovies", similarMovies);
+
+  const [activeTab, setActiveTab] = useState("reviews");
+  const clickReviews = () => {
+    setActiveTab("reviews");
+  };
+  const clickRelatedMovies = () => {
+    setActiveTab("relatedMovies");
+  };
 
   useEffect(() => {
     dispatch(movieAction.getMovies(id));
@@ -46,7 +60,41 @@ const MovieDetail = () => {
           </li>
         </ul>
       </div>
-      <MovieDetailsInfo movies={totalMovies} />
+      <div className="p-100">
+        <Container>
+          <Row>
+            <MovieDetailsInfo movies={totalMovies} />
+          </Row>
+          <Row className="movie-details">
+            <div>
+              <button
+                className={`review-tab ${
+                  activeTab === "reviews" ? "active" : ""
+                }`}
+                onClick={clickReviews}
+              >
+                REVIEWS ({movieReviews.results.length})
+              </button>
+              <button
+                className={`review-tab ${
+                  activeTab === "relatedMovies" ? "active" : ""
+                }`}
+                onClick={clickRelatedMovies}
+              >
+                RELATED MOVIES ({similarMovies.results.length})
+              </button>
+            </div>
+            <div>
+              {activeTab === "reviews" && (
+                <ReviewList reviews={movieReviews.results} />
+              )}
+              {activeTab === "relatedMovies" && (
+                <RelatedMovies movies={similarMovies.results} id={id} />
+              )}
+            </div>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 };

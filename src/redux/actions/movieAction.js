@@ -26,18 +26,30 @@ function getMovies(id) {
         `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
       );
 
+      const movieReviewsApi = api.get(
+        `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+      );
+
+      const similarMoviesApi = api.get(
+        `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`
+      );
+
       let [
         popularMovies,
         topRatedMovies,
         upcomingMovies,
         genreList,
         movieDetails,
+        movieReviews,
+        similarMovies,
       ] = await Promise.all([
         popularMovieApi,
         topRatedApi,
         upComingApi,
         genreApi,
         movieDetailsApi,
+        movieReviewsApi,
+        similarMoviesApi,
       ]);
 
       dispatch({
@@ -53,6 +65,8 @@ function getMovies(id) {
             ...upcomingMovies.data.results,
           ],
           movieDetails: movieDetails.data,
+          movieReviews: movieReviews.data,
+          similarMovies: similarMovies.data,
         },
       });
     } catch (error) {

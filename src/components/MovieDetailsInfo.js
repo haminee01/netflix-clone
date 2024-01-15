@@ -11,8 +11,6 @@ const MovieDetailsInfo = ({ movies }) => {
   const posterBaseUrl = "https://image.tmdb.org/t/p/w300_and_h450_bestv2";
 
   const { genreList, movieDetails } = useSelector((state) => state.movie);
-  console.log("selectedMovie", selectedMovie);
-  console.log("movieDetails", movieDetails);
 
   const getGenreName = (id) => {
     const foundGenre = genreList.find((genre) => genre.id === id);
@@ -23,7 +21,7 @@ const MovieDetailsInfo = ({ movies }) => {
     <div>
       <Container className="movie-details">
         <Row>
-          <Col>
+          <Col col-xl-6 col-lg-6>
             {selectedMovie ? (
               <img
                 className="movie-details-image"
@@ -33,7 +31,7 @@ const MovieDetailsInfo = ({ movies }) => {
               <div>No image available</div>
             )}
           </Col>
-          <Col>
+          <Col col-xl-6 col-lg-8>
             {selectedMovie && (
               <>
                 {selectedMovie.genre_ids.map((id) => (
@@ -114,7 +112,7 @@ const MovieDetailsInfo = ({ movies }) => {
               </ul>
             </div>
 
-            <button>Watch Trailer</button>
+            <button className="more-button">Watch Trailer</button>
           </Col>
         </Row>
       </Container>

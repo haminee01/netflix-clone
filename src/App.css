@@ -3,6 +3,11 @@ body {
   color: white;
 }
 
+.p-100 {
+  padding-bottom: 100px;
+  color: #fff;
+}
+
 .navbar-black {
   background-color: black !important;
 }
@@ -80,6 +85,21 @@ body {
   height: 100%;
 }
 
+.movies-card:hover .over-lay {
+  opacity: 1;
+  background: rgba(43, 41, 41, 0.9);
+  width: 100%;
+  height: 100%;
+}
+.over-lay {
+  opacity: 0;
+}
+.over-lay h2 {
+  font-family: fantasy;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
 .id-badge {
   margin-right: 5px;
 }
@@ -144,12 +164,15 @@ body {
   letter-spacing: 2px;
 }
 
+.container {
+  max-width: 1150px;
+}
+
 .movie-details {
   margin-top: 100px;
 }
 .movie-details-image {
   width: 500px;
-  margin-left: 80px;
 }
 .movie-details-genrebox {
   background-color: #dc143c;
@@ -199,6 +222,24 @@ div span {
   margin-bottom: 40px;
 }
 
+.movie-details-reviews {
+  padding: 40px;
+  border: 4px solid #f9f9f9;
+  margin-top: 30px;
+}
+.reviews-line {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.more-button {
+  background: none;
+  border: none;
+  color: #d3d3d3;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -210,4 +251,35 @@ ul {
   text-align: center;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.review-tab {
+  background: #747691;
+  border-color: #747691;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &.active {
+    background-color: #fe4536;
+  }
+}
+
+.related-movies {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.movies-card {
+  width: 350px;
+  height: 200px;
+  margin-bottom: 20px;
 }
